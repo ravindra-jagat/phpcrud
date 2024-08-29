@@ -59,43 +59,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Record</title>
-	<!-- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
+    <title>View Record</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .content-box {
+            width: 100%;
+            max-width: 600px; /* Adjust the max width as needed */
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="containter-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="page-header">
-						<h1>View Record</h1>
-					</div>
-					<div class="form-group">
-						<label   >Product Name</label>
-						<p class="form-control-static"><?php echo $row["name"]; ?></p>
-					</div>
-					<div class="form-group">
-						<label>Product Size</label>
-						<p class="form-control-static"><?php echo $row["size"]; ?></p>
-					</div>
-					<div class="form-group">
-						<label>Product Category</label>
-						<p class="form-control-static"><?php echo $row["category"]; ?></p>
-					</div>
-					<div class="form-group">
-						<label>Product Quantity</label>
-						<p class="form-control-static"><?php echo $row["quantity"]; ?></p>
-					</div>
-					<div class="form-group">
-						<label>Product price</label>
-						<p class="form-control-static"><?php echo $row["price"]; ?></p>
-					</div>
-					<p><a href="index.php" class="btn btn-primary">Back</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="centered-content">
+        <div class="content-box">
+            <div class="page-header">
+                <h1>View Record</h1>
+            </div>
+            <div class="form-group">
+                <label>Product Name</label>
+                <p class="form-control-static"><?php echo $row["name"]; ?></p>
+            </div>
+            <div class="form-group">
+                <label>Product Size</label>
+                <p class="form-control-static"><?php echo $row["size"]; ?></p>
+            </div>
+            <div class="form-group">
+                <label>Product Category</label>
+                <p class="form-control-static"><?php echo $row["category"]; ?></p>
+            </div>
+            <div class="form-group">
+                <label>Product Quantity</label>
+                <p class="form-control-static"><?php echo $row["quantity"]; ?></p>
+            </div>
+            <div class="form-group">
+                <label>Product Price</label>
+                <p class="form-control-static"><?php echo $row["price"]; ?></p>
+            </div>
+            <p><a href="index.php" class="btn btn-primary">Back</a></p>
+        </div>
+    </div>
 </body>
 </html>
