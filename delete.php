@@ -1,12 +1,18 @@
 <?php
-if (isset($_POST["id"]) && !empty($_POST["id"])) {
-    require_once "config.php";
+	
+	if(isset($_POST["id"]) && !empty($_POST["id"]))
+	{
+		echo "Hello";
+		
+		require_once "config.php";
 
-    $sql = "DELETE FROM products WHERE id = ?";
+		$sql = "DELETE FROM products WHERE id = ?";
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
-        mysqli_stmt_bind_param($stmt, "i", $param_id);
-        $param_id = $_POST["id"];
+		if($stmt = mysqli_prepare($link, $sql))
+		{
+			mysqli_stmt_bind_param($stmt,"i", $param_id);
+
+			$param_id = $_POST["id"];
 
         if (mysqli_stmt_execute($stmt)) {
             header("location: index.php");
@@ -26,7 +32,6 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     }
 }
 ?>
-
 <!-- Design part of delete -->
 <!DOCTYPE html>
 <html>
@@ -63,8 +68,8 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="index.php">
-						<input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>">
+					<form method="POST" action="#">
+						<input type="hidden" name="id" value="<?php echo htmlspecialchars($_GET['id']); ?>">
 						<p>Do you really want to delete?</p>
 						<br>
 						<div class="text-center">
